@@ -22,3 +22,10 @@
 
 - 📌 **页面悬浮窗**  
   悬浮窗小巧灵活，可拖动、可收起，贴边展示不打扰。
+
+---
+
+## 截图
+<img width="420" height="722" alt="image" src="https://github.com/user-attachments/assets/65081d7d-2be8-4f7a-ae93-c23122614cd7" />
+<img width="417" height="717" alt="image" src="https://github.com/user-attachments/assets/9f933696-a700-4318-9908-cab4faf9a29e" />
+
