@@ -2,6 +2,8 @@
 
  **使用方法，请参考我的博客：** [‘Good助手‘ 扩展程序使用介绍](https://blog.csdn.net/u013176571/article/details/149159198)
 
+ **插件目前已上架应用商店（新版本将优先在商店上架）：** [顾得助手-Chrome应用商店](https://chromewebstore.google.com/detail/%E9%A1%BE%E5%BE%97%E5%8A%A9%E6%89%8B/olbkmblpagbnmjfdilcamdkfkbkdpmpc)
+
 # 顾得助手 - 多平台智能对话、总结与翻译工具
 
 一个轻量级智能浮窗插件，支持与多平台大语言模型（如 OpenAI ChatGPT、Claude、Gemini、Ollama、Deepseek 等）对话，并提供一键网页总结、考试辅助等功能，助您高效阅读网页内容、快速获取 AI 帮助。
