@@ -1,0 +1,10 @@
+{
+  "extension_name": {
+    "message": "Good Assistant",
+    "description": "The name of the extension"
+  },
+  "extension_description": {
+    "message": "A lightweight floating window plugin that supports dialogue with multi-platform LLMs and provides one-click web summary and translation functions.",
+    "description": "The description of the extension"
+  }
+}

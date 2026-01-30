@@ -1,0 +1,10 @@
+{
+  "extension_name": {
+    "message": "顾得助手",
+    "description": "扩展程序的名称"
+  },
+  "extension_description": {
+    "message": "一个轻量级悬浮窗插件，支持与多平台大语言模型对话，并提供一键网页总结与翻译功能。",
+    "description": "扩展程序的描述"
+  }
+}
