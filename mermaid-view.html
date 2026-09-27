@@ -11,8 +11,9 @@
             width: 100vw;
             height: 100vh;
             overflow: hidden;
-            background-color: #fff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color, #fff);
+            color: var(--text-primary, #2f2f2f);
+            font-family: var(--font-family-base, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif);
         }
         #app {
             width: 100%;
@@ -25,14 +26,14 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            background-color: #fff;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+            background-color: var(--card-bg, #fff);
+            box-shadow: 0 1px 4px color-mix(in srgb, var(--text-primary, #000) 12%, transparent);
             z-index: 10;
         }
         .header-title {
             font-size: 16px;
             font-weight: 600;
-            color: #333;
+            color: var(--text-primary, #333);
         }
         .controls {
             display: flex;
@@ -41,19 +42,19 @@
         .btn {
             padding: 6px 12px;
             border-radius: 6px;
-            border: 1px solid #ddd;
-            background-color: #fff;
+            border: 1px solid var(--border-color, #ddd);
+            background-color: var(--card-bg, #fff);
             cursor: pointer;
             font-size: 13px;
             display: flex;
             align-items: center;
             gap: 6px;
             transition: all 0.2s;
-            color: #555;
+            color: var(--text-secondary, #555);
         }
         .btn:hover {
-            background-color: #f0f0f0;
-            border-color: #ccc;
+            background-color: var(--hover-bg, #f0f0f0);
+            border-color: var(--border-color, #ccc);
         }
         .btn svg {
             width: 14px;
@@ -64,7 +65,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #fff;
+            background-color: var(--bg-color, #fff);
             cursor: grab;
             position: relative;
         }
@@ -82,13 +83,85 @@
             max-width: none !important;
             box-sizing: content-box !important;
         }
+        #mermaid-container svg .node rect,
+        #mermaid-container svg .node polygon,
+        #mermaid-container svg .node circle,
+        #mermaid-container svg .node ellipse,
+        #mermaid-container svg .node path {
+            fill: var(--hover-bg, #f8fafc) !important;
+            stroke: var(--primary-color, #7c84f3) !important;
+        }
+        #mermaid-container svg .node rect {
+            rx: 0 !important;
+            ry: 0 !important;
+        }
+        #mermaid-container svg .nodeLabel,
+        #mermaid-container svg .nodeLabel * {
+            color: var(--text-primary, #2f2f2f) !important;
+            fill: var(--text-primary, #2f2f2f) !important;
+        }
+        #mermaid-container svg .cluster rect,
+        #mermaid-container svg .cluster polygon {
+            fill: var(--hover-bg, #f8fafc) !important;
+            stroke: var(--border-color, #e9ecef) !important;
+            stroke-width: 1px !important;
+        }
+        #mermaid-container svg .cluster-label,
+        #mermaid-container svg .cluster-label text,
+        #mermaid-container svg .cluster-label span {
+            color: var(--text-secondary, #6c757d) !important;
+            fill: var(--text-secondary, #6c757d) !important;
+        }
+        #mermaid-container svg .edgePath path,
+        #mermaid-container svg .flowchart-link {
+            stroke: var(--primary-color, #7c84f3) !important;
+            fill: none !important;
+        }
+        #mermaid-container svg .arrowheadPath,
+        #mermaid-container svg defs marker path,
+        #mermaid-container svg .arrowMarkerPath {
+            stroke: var(--primary-color, #7c84f3) !important;
+            fill: var(--primary-color, #7c84f3) !important;
+        }
+        #mermaid-container svg .edgeLabel rect,
+        #mermaid-container svg .edgeLabel polygon {
+            fill: var(--card-bg, #fff) !important;
+            stroke: none !important;
+        }
+        #mermaid-container svg .edgeLabel,
+        #mermaid-container svg .edgeLabel text,
+        #mermaid-container svg span.edgeLabel {
+            color: var(--text-secondary, #6c757d) !important;
+            fill: var(--text-secondary, #6c757d) !important;
+        }
+        #mermaid-container svg .edgeLabel p {
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+            min-height: 22px;
+            margin: 0 !important;
+            padding: 3px 9px !important;
+            border: 1px solid var(--border-color, #e9ecef) !important;
+            background: var(--hover-bg, #f8fafc) !important;
+            color: var(--text-secondary, #6c757d) !important;
+            line-height: 1.45;
+            white-space: nowrap;
+        }
+        #mermaid-container svg foreignObject:has(span.edgeLabel),
+        #mermaid-container svg foreignObject:has(span.edgeLabel) > div {
+            overflow: visible !important;
+            vertical-align: middle !important;
+        }
+        #mermaid-container svg foreignObject > div.labelBkg {
+            border-radius: 6px !important;
+        }
         .loader {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 14px;
-            color: #666;
+            color: var(--text-secondary, #666);
         }
         .error {
             color: #e53e3e;
@@ -96,9 +169,11 @@
             text-align: center;
         }
     </style>
-  <script type="module" crossorigin src="/chunks/mermaid-view-BHrUce5s.js"></script>
-  <link rel="modulepreload" crossorigin href="/chunks/i18nManager-BNTWeA2A.js">
-  <link rel="modulepreload" crossorigin href="/chunks/svg-pan-zoom-BOmzfF0d.js">
+  <script type="module" crossorigin src="/chunks/mermaid-view-W1eQ9EOG.js"></script>
+  <link rel="modulepreload" crossorigin href="/chunks/_virtual_wxt-html-plugins-DPbbfBKe.js">
+  <link rel="modulepreload" crossorigin href="/chunks/i18nManager-CERMxS6O.js">
+  <link rel="modulepreload" crossorigin href="/chunks/svg-pan-zoom-Dmy_2dzT.js">
+  <link rel="stylesheet" crossorigin href="/assets/theme-B2SId4Fz.css">
 </head>
 <body>
     <div id="app">
